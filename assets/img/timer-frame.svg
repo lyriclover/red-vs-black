@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 571 172">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff6cf"/><stop offset=".14" stop-color="#f6dc8c"/><stop offset=".34" stop-color="#d9ae55"/>
+<stop offset=".5" stop-color="#a87828"/><stop offset=".6" stop-color="#7d5616"/><stop offset=".74" stop-color="#c99a43"/>
+<stop offset=".88" stop-color="#f3d98f"/><stop offset="1" stop-color="#b8862f"/></linearGradient>
+<linearGradient id="bk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e1e1e"/><stop offset=".45" stop-color="#070707"/><stop offset="1" stop-color="#121212"/></linearGradient>
+<radialGradient id="gw" cx=".5" cy=".62" r=".55"><stop offset="0" stop-color="#ffcc66" stop-opacity=".14"/><stop offset="1" stop-color="#ffcc66" stop-opacity="0"/></radialGradient>
+</defs>
+<path d="M64 0 L507 0 L571 86 L507 172 L64 172 L0 86Z" fill="url(#g)" stroke="#3a2706" stroke-width="2"/>
+<path d="M64.9 1.8 L506.1 1.8 L568.76 86 L506.1 170.2 L64.9 170.2 L2.24 86Z" fill="none" stroke="#fff7d6" stroke-opacity=".65" stroke-width="1"/>
+<path d="M67.01 6 L503.99 6 L563.52 86 L503.99 166 L67.01 166 L7.48 86Z" fill="url(#bk)" stroke="#1d1203" stroke-width="2"/>
+<path d="M67.01 6 L503.99 6 L563.52 86 L503.99 166 L67.01 166 L7.48 86Z" fill="url(#gw)"/>
+<path d="M70.03 12 L500.97 12 L556.04 86 L500.97 160 L70.03 160 L14.96 86Z" fill="none" stroke="url(#g)" stroke-opacity=".55" stroke-width="1"/>
+</svg>

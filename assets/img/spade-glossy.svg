@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 116 116">
+<defs>
+<linearGradient id="sv" x1="0" y1="0" x2=".35" y2="1">
+<stop offset="0" stop-color="#ffffff"/><stop offset=".22" stop-color="#e9e9e9"/><stop offset=".46" stop-color="#ababab"/>
+<stop offset=".6" stop-color="#6f6f6f"/><stop offset=".8" stop-color="#d6d6d6"/><stop offset="1" stop-color="#8e8e8e"/></linearGradient>
+<radialGradient id="b" cx=".4" cy=".34" r=".78"><stop offset="0" stop-color="#727272"/><stop offset=".22" stop-color="#2e2e2e"/><stop offset=".58" stop-color="#0c0c0c"/><stop offset="1" stop-color="#000"/></radialGradient>
+<linearGradient id="hl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<clipPath id="c"><path d="M50 4C58 18 94 38 94 62C94 76 84 84 72 84C64 84 57 80 53 74C54 84 58 91 67 96L33 96C42 91 46 84 47 74C43 80 36 84 28 84C16 84 6 76 6 62C6 38 42 18 50 4Z"/></clipPath>
+<filter id="s" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.4"/></filter>
+</defs>
+<path d="M50 4C58 18 94 38 94 62C94 76 84 84 72 84C64 84 57 80 53 74C54 84 58 91 67 96L33 96C42 91 46 84 47 74C43 80 36 84 28 84C16 84 6 76 6 62C6 38 42 18 50 4Z" fill="none" stroke="#000" stroke-width="8" stroke-linejoin="round" opacity=".7"/>
+<path d="M50 4C58 18 94 38 94 62C94 76 84 84 72 84C64 84 57 80 53 74C54 84 58 91 67 96L33 96C42 91 46 84 47 74C43 80 36 84 28 84C16 84 6 76 6 62C6 38 42 18 50 4Z" fill="none" stroke="url(#sv)" stroke-width="5.2" stroke-linejoin="round"/>
+<path d="M50 4C58 18 94 38 94 62C94 76 84 84 72 84C64 84 57 80 53 74C54 84 58 91 67 96L33 96C42 91 46 84 47 74C43 80 36 84 28 84C16 84 6 76 6 62C6 38 42 18 50 4Z" fill="url(#b)"/>
+<g clip-path="url(#c)">
+<path d="M47 12C40 24 20 38 14 54C13 58 13 62 14 64C20 50 34 36 47 28Z" fill="url(#hl)" opacity=".55" filter="url(#s)"/>
+<path d="M50 4C58 18 94 38 94 62C94 76 84 84 72 84C64 84 57 80 53 74C54 84 58 91 67 96L33 96C42 91 46 84 47 74C43 80 36 84 28 84C16 84 6 76 6 62C6 38 42 18 50 4Z" fill="none" stroke="#b5b5b5" stroke-width="3.5" opacity=".28" filter="url(#s)"/>
+<ellipse cx="74" cy="66" rx="10" ry="5" transform="rotate(-30 74 66)" fill="#fff" opacity=".18" filter="url(#s)"/>
+</g>
+<circle cx="40" cy="22" r="1.8" fill="#fff" opacity=".9"/>
+</svg>

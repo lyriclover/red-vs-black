@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RED vs BLACK · Card Challenge</title>
+<meta name="description" content="Premium automatic Red vs Black card game for live streams. Virtual entertainment with points and statistics only.">
+<meta name="theme-color" content="#050505">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!--GAME:START-->
+<div id="rvb-app" class="rvb-app q-high">
+  <div class="rvb-viewport">
+    <div class="rvb-stage" id="rvb-stage">
+      <div class="rvb-bg"></div>
+      <div class="rvb-rays"></div>
+      <div class="rvb-bg-overlay"></div>
+      <div class="rvb-sparkles" id="rvb-sparkles" aria-hidden="true"></div>
+
+      <!-- ============ TOP ============ -->
+      <div class="rvb-round rvb-frame" aria-label="Current round">
+        <span class="rvb-round-label">ROUND</span>
+        <span class="rvb-round-num rvb-gold-text"># <b id="rvb-round">1</b></span>
+      </div>
+
+      <div class="rvb-title">
+        <div class="rvb-crown"></div>
+        <h1 class="rvb-h1" aria-label="Red vs Black"><span class="t-red" data-text="RED">RED</span><span class="t-vs" data-text="vs">vs</span><span class="t-black" data-text="BLACK">BLACK</span></h1>
+        <div class="rvb-subtitle"><i class="rvb-orn l"></i><span class="rvb-gold-text">CARD CHALLENGE</span><i class="rvb-orn r"></i></div>
+      </div>
+
+      <div class="rvb-live rvb-frame" aria-label="Live status">
+        <span class="rvb-bars"><i></i><i></i><i></i></span>
+        <span class="rvb-dot"></span>
+        <span class="rvb-live-text" id="rvb-live-text">LIVE</span>
+      </div>
+
+      <!-- ============ SIDE PANELS ============ -->
+      <section class="rvb-panel rvb-panel-red" id="rvb-panel-red" aria-label="Red">
+        <div class="rvb-panel-body">
+          <div class="rvb-panel-glow"></div>
+          <div class="rvb-panel-frame"></div>
+          <div class="rvb-panel-fill">
+            <div class="rvb-panel-damask"></div>
+            <div class="rvb-panel-light"></div>
+            <div class="rvb-panel-sweep"></div>
+          </div>
+          <div class="rvb-panel-icon"></div>
+          <div class="rvb-label"><span data-text="RED">RED</span></div>
+          <div class="rvb-panel-dim rvb-panel-fill"></div>
+          <div class="rvb-ribbon"><span>WINNER</span></div>
+        </div>
+      </section>
+
+      <section class="rvb-panel rvb-panel-black" id="rvb-panel-black" aria-label="Black">
+        <div class="rvb-panel-body">
+          <div class="rvb-panel-glow"></div>
+          <div class="rvb-panel-frame"></div>
+          <div class="rvb-panel-fill">
+            <div class="rvb-panel-damask"></div>
+            <div class="rvb-panel-light"></div>
+            <div class="rvb-panel-sweep"></div>
+          </div>
+          <div class="rvb-panel-icon"></div>
+          <div class="rvb-label"><span data-text="BLACK">BLACK</span></div>
+          <div class="rvb-panel-dim rvb-panel-fill"></div>
+          <div class="rvb-ribbon"><span>WINNER</span></div>
+        </div>
+      </section>
+
+      <div class="rvb-chips rvb-chips-l"></div>
+      <div class="rvb-chips rvb-chips-r"></div>
+
+      <!-- ============ CENTER ============ -->
+      <div class="rvb-center">
+        <div class="rvb-aura"></div>
+        <div class="rvb-aura-red"></div>
+        <div class="rvb-aura-black"></div>
+        <div class="rvb-flash" id="rvb-flash"></div>
+        <div class="rvb-platform"></div>
+        <div class="rvb-card-shadow" id="rvb-card-shadow"></div>
+        <div class="rvb-deck" id="rvb-deck"></div>
+        <div class="rvb-card-wrap" id="rvb-card-wrap">
+          <div class="rvb-card" id="rvb-card">
+            <div class="rvb-face rvb-back"><i class="rvb-shine"></i></div>
+            <div class="rvb-face rvb-front"><div class="rvb-front-art" id="rvb-front"></div><i class="rvb-shine" id="rvb-front-shine"></i></div>
+          </div>
+        </div>
+        <div class="rvb-particles" id="rvb-particles"></div>
+        <div class="rvb-plaque" id="rvb-plaque"><span id="rvb-plaque-text">DECK 1 · CARD 1 / 52</span></div>
+        <div class="rvb-newdeck" id="rvb-newdeck"><b>NEW DECK</b><small>52 CARDS · RESHUFFLED</small></div>
+      </div>
+
+      <!-- ============ BOTTOM ============ -->
+      <div class="rvb-stats rvb-frame">
+        <div class="rvb-stat"><i class="rvb-ico h"></i><span class="rvb-stat-label">RED WINS</span><span class="rvb-stat-num" id="rvb-red-count">0</span></div>
+        <div class="rvb-ratio" title="Red / Black ratio"><i id="rvb-ratio-red"></i></div>
+        <div class="rvb-stat"><i class="rvb-ico s"></i><span class="rvb-stat-label">BLACK WINS</span><span class="rvb-stat-num" id="rvb-black-count">0</span></div>
+      </div>
+      <div class="rvb-link rvb-link-l"></div>
+      <div class="rvb-timer" id="rvb-timer">
+        <div class="rvb-timer-frame"></div>
+        <div class="rvb-timer-label" id="rvb-timer-label">NEXT CARD IN</div>
+        <div class="rvb-timer-digits"><span id="rvb-timer-digits">00:15</span></div>
+        <div class="rvb-progress"><i id="rvb-progress"></i></div>
+      </div>
+      <div class="rvb-link rvb-link-r"></div>
+      <div class="rvb-recent rvb-frame">
+        <div class="rvb-recent-title rvb-gold-text">RECENT RESULTS</div>
+        <div class="rvb-recent-list" id="rvb-recent"></div>
+      </div>
+      <div class="rvb-disclaimer">VIRTUAL ENTERTAINMENT ONLY · POINTS &amp; STATISTICS · NO REAL MONEY</div>
+    </div>
+  </div>
+
+  <!-- ============ HIDDEN CONTROL PANEL ============ -->
+  <button class="rvb-gear" id="rvb-gear" type="button" aria-label="Open settings" title="Settings (S)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+  </button>
+
+  <aside class="rvb-settings" id="rvb-settings" aria-label="Game settings">
+    <header><h2>CONTROL PANEL</h2><button class="rvb-x" type="button" data-act="close" aria-label="Close settings">&times;</button></header>
+    <div class="rvb-status" id="rvb-status"><span class="dot"></span>Running</div>
+    <div class="rvb-scroll">
+      <section>
+        <h3>Game</h3>
+        <div class="rvb-row">
+          <button class="rvb-btn primary" type="button" data-act="toggle" id="rvb-btn-toggle">&#10073;&#10073; Pause</button>
+          <button class="rvb-btn" type="button" data-act="resume" id="rvb-btn-resume">&#9654; Resume</button>
+        </div>
+        <button class="rvb-btn danger wide" type="button" data-act="restart" data-label="&#8635; Restart Game" data-confirm="Click again to restart">&#8635; Restart Game</button>
+      </section>
+      <section>
+        <h3>Display</h3>
+        <button class="rvb-btn wide" type="button" data-act="fullscreen" id="rvb-btn-fs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg> Enter Fullscreen</button>
+      </section>
+      <section>
+        <h3>Round Interval</h3>
+        <div class="rvb-seg" data-group="interval">
+          <button type="button" data-val="10">10s</button><button type="button" data-val="15">15s</button><button type="button" data-val="20">20s</button><button type="button" data-val="30">30s</button>
+        </div>
+      </section>
+      <section>
+        <h3>Audio</h3>
+        <div class="rvb-toggle-row"><span>Sound effects</span><button class="rvb-switch" type="button" role="switch" data-act="sound" id="rvb-sw-sound" aria-label="Sound effects"></button></div>
+        <input class="rvb-range" type="range" min="0" max="100" step="1" id="rvb-vol-sound" aria-label="Sound volume">
+        <div class="rvb-toggle-row" style="display:none"><span>Background music</span><button class="rvb-switch" type="button" role="switch" data-act="music" id="rvb-sw-music" aria-label="Music"></button></div>
+        <input class="rvb-range" style="display:none" type="range" min="0" max="100" step="1" id="rvb-vol-music" aria-label="Music volume">
+        <p class="rvb-audio-note">Original card sounds and winner effects only. No background music.</p>
+      </section>
+      <section>
+        <h3>Animation Quality</h3>
+        <div class="rvb-seg" data-group="quality">
+          <button type="button" data-val="low">Low</button><button type="button" data-val="medium">Medium</button><button type="button" data-val="high">High</button>
+        </div>
+      </section>
+      <section>
+        <h3>Statistics</h3>
+        <div class="rvb-mini" id="rvb-mini">Red 0 · Black 0</div>
+        <button class="rvb-btn danger wide" type="button" data-act="reset" data-label="&#10226; Reset Statistics" data-confirm="Click again to reset">&#10226; Reset Statistics</button>
+      </section>
+      <section id="rvb-extra" hidden>
+        <h3>Project Files</h3>
+        <button class="rvb-btn gold wide" type="button" data-act="download">&#11015; Download Project ZIP</button>
+      </section>
+    </div>
+    <footer>
+      <p><kbd>Space</kbd> pause/resume · <kbd>F</kbd> fullscreen · <kbd>S</kbd> panel · <kbd>N</kbd> sound · <kbd>M</kbd> music</p>
+      <p>Virtual entertainment only — points &amp; statistics, no real money.</p>
+    </footer>
+  </aside>
+  <div class="rvb-toasts" id="rvb-toasts" aria-live="polite"></div>
+</div>
+<!--GAME:END-->
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/cards.js"></script>
+<script src="assets/js/audio.js"></script>
+<script src="assets/js/game.js"></script>
+<script>window.RVBGame && window.RVBGame.start();</script>
+</body>
+</html>
